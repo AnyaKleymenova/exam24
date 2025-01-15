@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home & Beyond</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Интернет-магазин "Home & Beyond"</div>
+        <input type="text" placeholder="Поиск..." class="search-bar">
+        <div class="icon-container">
+            <a href="cart.html" class="cart-link"><img src="./karz.png" alt="Корзина"></a>
+            <a href="profile.html" class="profile-link"><img src="./lk.png" alt="Профиль"></a>
+        </div>
+    </header>
+
+    <div class="notifications"></div>
+
+    <aside class="sidebar">
+        <form id="filter-form">
+            <div class="filter-section">
+                <label>Категория товара</label>
+                <input type="checkbox" name="category" value="home & kitchen"> Дом и кухня <br>
+                <input type="checkbox" name="category" value="tv, audio & cameras"> ТВ, аудио и камеры <br>
+                <input type="checkbox" name="category" value="sports & fitness"> Спорт и фитнес <br>
+                <input type="checkbox" name="category" value="beauty & health"> Красота и здоровье <br>
+                <input type="checkbox" name="category" value="electronics"> Электроника <br>
+            </div>
+            <div class="filter-section">
+                <label>Стоимость</label>
+                <input type="number" name="min-price" placeholder="От">
+                <input type="number" name="max-price" placeholder="До">
+            </div>
+            <div class="filter-section">
+                <label>Товары со скидкой</label>
+                <input type="checkbox" name="discount">
+            </div>
+            <button type="submit" class="filter-form button">Применить</button>
+        </form>
+    </aside>
+
+    <main>
+        <h1>Каталог</h1>
+        <div class="sort-container">
+            <label for="sort-select">Сортировать по:</label>
+            <select id="sort-select">
+                <option value="default">По умолчанию</option>
+                <option value="price-asc">По цене (возрастание)</option>
+                <option value="price-desc">По цене (убывание)</option>
+                <option value="rating-asc">По рейтингу (возрастание)</option>
+                <option value="rating-desc">По рейтингу (убывание)</option>
+            </select>
+        </div>
+
+        <div id="catalog" class="catalog">
+            <div class="grid" id="homekitchen"></div>
+            <div class="grid" id="tvaudiocameras"></div>
+            <div class="grid" id="sportsfitness"></div>
+            <div class="grid" id="beautyhealth"></div>
+        </div>
+        <button id="load-more">Загрузить ещё</button>
+    </main>
+
+    <footer>
+        <div class="company-info">
+            <p>Ⓒ"Home & Beyond"</p>
+            <p>Russia.2025</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>
