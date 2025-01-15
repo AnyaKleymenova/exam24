@@ -23,58 +23,68 @@
             <h2>Состав заказа</h2>
             <div id="chosen_goods">
                 <div class="goods_order order-container"></div>
-                <div class="nothing_selected">Ничего не выбрано</div>
+                <div class="nothing_selected" id="nothing_selected">Ничего не выбрано. Для заказа перейдите в <a href="index.html">каталог</a>.</div>
             </div>
         </section>
         <section class="two-forms">
             <div id="notification" class="notification hidden">
                 <p id="notification-text"></p>
-                <button id="notification-button">Окей</button>
+                <button id="notification-button"></button>
             </div>
             <h2 id="form">Оформление заказа</h2>
             <form id="order-form">
-                <fieldset class="lunch">
-                    <p class="your_order">Ваш заказ</p>
-                    <div id="order-summary">
-                        <p id="empty_space"><b>Ничего не выбрано</b></p>
-                        <p id="food_price">Стоимость заказа</p>
-                        <p id="total_price">0₽</p>
+                <div class="form-columns">
+                    <div class="order-summary-column">
+                        <fieldset class="lunch">
+                            <p class="your_order">Ваш заказ</p>
+                            <div id="order-summary">
+                                <div id="order-items"></div>
+                                <p id="food_price">Стоимость заказа (с учетом доставки. 200 руб., в выходные дни – 300 руб.)</p>
+                                <p id="total_price">0₽</p>
+                            </div>
+                        </fieldset>
                     </div>
-                    <label class='label_comment' for="comment">Комментарий к заказу</label>
-                    <textarea id="comment" rows="6" cols="34" placeholder=""></textarea>
-                </fieldset>
-                <fieldset class="user">
-                    <legend class="your_data">Ваши данные</legend>
-                    <label for="name">Имя</label>
-                    <input type="text" id="name" required>
-                    <label for="email" id="label_email">Email</label>
-                    <input type="email" id="email" required>
-                    <div>
-                        <input type="checkbox" id="subscribe" checked>
-                        <label for="subscribe" id="subscribe_yes">Получать информацию о скидках и акциях</label>
+                    <div class="user-data-column">
+                        <fieldset class="user">
+                            <legend class="your_data">Ваши данные</legend>
+                            <label for="name">Имя</label>
+                            <input type="text" id="name" required>
+                            <label for="email" id="label_email">Email</label>
+                            <input type="email" id="email" required>
+                            <label class='label_comment' for="comment">Комментарий к заказу</label>
+                            <textarea id="comment" rows="6" cols="34" placeholder=""></textarea>
+                            <div>
+                                <label for="subscribe" id="subscribe_yes">Получать информацию о скидках и акциях</label>
+                                <input type="checkbox" id="subscribe" checked>
+                            </div>
+                            <label for="phone" id="label_phone">Номер телефона</label>
+                            <input type="tel" id="phone" required>
+                            <label for="address">Адрес доставки</label>
+                            <input type="text" id="address" required>
+                            <label for="delivery_date">Дата доставки</label>
+                            <input type="date" id="delivery_date" required>
+                            <label for="delivery_time">Временной интервал доставки</label>
+                            <select id="delivery_time" required>
+                                <option value="morning">Утро (07:00 - 12:00)</option>
+                                <option value="afternoon">День (12:00 - 18:00)</option>
+                                <option value="evening">Вечер (18:00 - 23:00)</option>
+                            </select>
+                            <div>
+                                <button type="reset" id="reset">Сбросить</button>
+                                <button type="submit" id="submit">Оформить</button>
+                            </div>
+                        </fieldset>
                     </div>
-                    <label for="phone" id="label_phone">Номер телефона</label>
-                    <input type="tel" id="phone" required>
-                    <label for="address">Адрес доставки</label>
-                    <input type="text" id="address" required>
-                    <label for="delivery_date">Дата доставки</label>
-                    <input type="date" id="delivery_date" required>
-                    <label for="delivery_time">Временной интервал доставки</label>
-                    <select id="delivery_time" required>
-                        <option value="morning">Утро (07:00 - 12:00)</option>
-                        <option value="afternoon">День (12:00 - 18:00)</option>
-                        <option value="evening">Вечер (18:00 - 23:00)</option>
-                    </select>
-                    <div>
-                        <button type="reset" id="reset">Сбросить</button>
-                        <button type="submit" id="submit">Оформить</button>
-                    </div>
-                </fieldset>
+                </div>
             </form>
         </section>
     </main>
-    <footer id="contact">
-        <p>Позвоните нам +7-000-000-00-00</p>
+
+    <footer>
+        <div class="company-info">
+            <p>Ⓒ "Home & Beyond"</p>
+            <p>Russia.2025</p>
+        </div>
     </footer>
     <script src="cart.js"></script>
 </body>

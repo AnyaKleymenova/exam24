@@ -1,0 +1,463 @@
+/* Затемнение фона */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+}
+
+main {
+    flex: 1;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Общий стиль модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 50vh;
+    max-width: 500px;
+    z-index: 1000;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Заголовок модального окна */
+.modal-header {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.modal-header .close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.modal-header .close-btn:hover {
+    color: #333;
+}
+
+/* Тело модального окна */
+.modal-body {
+    padding: 15px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    max-width: 100%;
+}
+
+/* Футер модального окна */
+.modal-footer {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    text-align: right;
+}
+
+.modal-footer .btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-footer .btn-confirm-del {
+    background-color: tomato;
+    color: white;
+}
+
+.modal-footer .btn-confirm {
+    background-color: greenyellow;
+    color: white;
+}
+
+.modal-footer .btn-confirm-del:hover {
+    background-color: rgba(203, 48, 48, 0.701);
+}
+
+.modal-footer .btn-confirm:hover {
+    background-color: rgba(34, 175, 34, 0.641);
+}
+
+.modal-footer .btn-close {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.modal-footer .btn-close:hover {
+    background-color: #d6d6d6;
+}
+
+/* Анимация для модального окна */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Для маленьких экранов */
+@media (max-width: 768px) {
+    .modal {
+        width: 95%;
+    }
+}
+
+/* Стили для полей только для чтения */
+.modal-body .form-control[readonly] {
+    background-color: #f5f5f5;
+    color: #555;
+    cursor: not-allowed;
+    border: 1px solid #ddd;
+}
+
+#editForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#edit-modal {
+    max-height: 100vh;
+    max-width: 100vh;
+    overflow-y: auto;
+}
+
+#edit-modal .modal-body {
+    padding: 10px;
+    max-height: 100vh;
+    max-width: 100vh;
+    overflow-y: auto;
+}
+
+.table-bordered {
+    border-collapse: collapse;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.edit-comment {
+    max-width: 800px;
+    max-height: 1200px;
+}
+
+#edit-order {
+    padding: 0px 0px 0 50px;
+    /* Отступы: сверху, справа, снизу, слева */
+}
+
+.form-group label[for="edit-order"] {
+    white-space: nowrap;
+    /* Предотвращает перенос текста */
+}
+/* Общие стили */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.icon-container {
+    display: flex;
+    gap: 10px;
+}
+
+.icon-container img {
+    width: 24px;
+    height: 24px;
+}
+
+main {
+    padding: 20px;
+    flex: 1;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+/* Стили для таблицы */
+.table-bordered {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table-bordered th, .table-bordered td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.table-bordered th {
+    background-color: #007bff;
+    color: white;
+}
+
+.table-bordered tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table-bordered tr:hover {
+    background-color: #e2e2e2;
+}
+
+.action-btn {
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.action-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Затемнение фона */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+}
+
+/* Общий стиль модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 50vh;
+    max-width: 500px;
+    z-index: 1000;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Заголовок модального окна */
+.modal-header {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.modal-header .close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.modal-header .close-btn:hover {
+    color: #333;
+}
+
+/* Тело модального окна */
+.modal-body {
+    padding: 15px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    max-width: 100%;
+}
+
+/* Футер модального окна */
+.modal-footer {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    text-align: right;
+}
+
+.modal-footer .btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-footer .btn-confirm-del {
+    background-color: tomato;
+    color: white;
+}
+
+.modal-footer .btn-confirm {
+    background-color: greenyellow;
+    color: white;
+}
+
+.modal-footer .btn-confirm-del:hover {
+    background-color: rgba(203, 48, 48, 0.701);
+}
+
+.modal-footer .btn-confirm:hover {
+    background-color: rgba(34, 175, 34, 0.641);
+}
+
+.modal-footer .btn-close {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.modal-footer .btn-close:hover {
+    background-color: #d6d6d6;
+}
+
+/* Анимация для модального окна */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Для маленьких экранов */
+@media (max-width: 768px) {
+    .modal {
+        width: 95%;
+    }
+}
+
+/* Стили для полей только для чтения */
+.modal-body .form-control[readonly] {
+    background-color: #f5f5f5;
+    color: #555;
+    cursor: not-allowed;
+    border: 1px solid #ddd;
+}
+
+#editForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#edit-modal {
+    max-height: 100vh;
+    max-width: 100vh;
+    overflow-y: auto;
+}
+
+#edit-modal .modal-body {
+    padding: 10px;
+    max-height: 100vh;
+    max-width: 100vh;
+    overflow-y: auto;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.edit-comment {
+    max-width: 800px;
+    max-height: 1200px;
+}
+
+#edit-order {
+    padding: 0px 0px 0 50px;
+    /* Отступы: сверху, справа, снизу, слева */
+}
+
+.form-group label[for="edit-order"] {
+    white-space: nowrap;
+    /* Предотвращает перенос текста */
+}
+
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
